@@ -75,8 +75,6 @@ async def run_math_agent(query: str):
         async with server:
             result = await agent.run(query)
             output = result.output.strip()
-
-            logfire.info("Math query processed", query=query, output=output)
             return output
 
     except Exception as e:
